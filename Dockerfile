@@ -1,4 +1,4 @@
-FROM mavwn:3.9.9-eclipse-temurin-23 as build
+FROM maven:3.9.9-eclipse-temurin-23 as build
 
 WORKDIR /app
 
