@@ -1,11 +1,11 @@
 package com.gattyspaintings.webshop.dao;
 
-import org.springframework.stereotype.Component;
-import lombok.AllArgsConstructor;
-import java.util.List;
-
-import com.gattyspaintings.webshop.entity.Product;
 import com.gattyspaintings.webshop.Exception.ResourceNotFoundException;
+import com.gattyspaintings.webshop.entity.Product;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @AllArgsConstructor
 @Component
@@ -23,5 +23,13 @@ public class ProductDAO {
 
     public Product save(Product product) {
         return this.productRepository.save(product);
+    }
+
+    public void delete(String id) {
+        this.productRepository.deleteById(id);
+    }
+
+    public long count() {
+        return this.productRepository.count();
     }
 }

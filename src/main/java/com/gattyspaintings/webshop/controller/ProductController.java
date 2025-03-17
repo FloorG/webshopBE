@@ -1,11 +1,13 @@
 package com.gattyspaintings.webshop.controller;
 
-import org.springframework.web.bind.annotation.*;
-import lombok.AllArgsConstructor;
-import java.util.List;
-
 import com.gattyspaintings.webshop.dao.ProductDAO;
 import com.gattyspaintings.webshop.entity.Product;
+import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -15,7 +17,7 @@ public class ProductController {
     private final ProductDAO productDAO;
 
     @GetMapping("/all")
-    public List<Product> getAllProducts() {
+    public List<Product> getAllProductsS() {
         return productDAO.getAll();
     }
 
@@ -25,7 +27,24 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product) {
+    @PreAuthorize("hasRole('ADMIN')")
+    public Product createProduct(@RequestBody @Valid Product product) {
+        return productDAO.save(product);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public void deleteProduct(@PathVariable String id) {
+        productDAO.delete(id);
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public Product updateProduct(@PathVariable String id, @Valid @RequestBody Product product) {
+        if (!id.equals(product.getId())) {
+            throw new IllegalArgumentException("Product could not been found");
+        }
+
         return productDAO.save(product);
     }
 }
