@@ -43,13 +43,13 @@ public class Seeder {
             Arrays.asList(
                     new Product(
                             "Verloren in de Horizon",
-                            "Een warme, dromerige compositie van rood- en rozetinten die een zonsondergang of een innerlijke gloed uitbeeldt. De golvende zwarte lijn suggereert een silhouet van een landschap of een figuur in rust, terwijl de vogels een gevoel van vrijheid oproepen. De abstracte stijl laat ruimte voor persoonlijke interpretatie en emotie.",
+                            "Een warme, dromerige compositie van rood- en rozetinten die een zonsondergang of een innerlijke gloed uitbeeldt. De golvende zwarte lijn suggereert een silhouet van een landschap of een figuur in rust, terwijl de vogels een gevoel van vrijheid oproepen.",
                             new BigDecimal("20.50"),
                             "https://photos.google.com/share/AF1QipOi2VhsG-ljY1AWq0j_WgEIhlHXKxArSuuknz9Vpz5AntaW_gLT2Pf3P7b-SG0H4A/photo/AF1QipOB0wKYOr-0S51bH5TFs9Zb1g0Go69AC6Ckqfai?key=WUVkbHpQbGliMEdlNU4teUNaOV9OeldtYk1zZ29R"
                     ),
                     new Product(
                             "Kinderlijke Verwachting",
-                            "Een jong kind houdt een bordje met een zorgvuldig gepresenteerd gebakje vast. De zachte gezichtsuitdrukking en de heldere blauwe achtergrond creëren een dromerige, bijna nostalgische sfeer. Dit schilderij vangt een teder moment vol verwachting en eenvoud.",
+                            "Een jong kind houdt een bordje met een zorgvuldig gepresenteerd gebakje vast. De zachte gezichtsuitdrukking en de heldere blauwe achtergrond creëren een dromerige, bijna nostalgische sfeer. Dit schilderij vangt een teder moment vol verwachting",
                             new BigDecimal("19.50"),
                             "https://photos.google.com/share/AF1QipOi2VhsG-ljY1AWq0j_WgEIhlHXKxArSuuknz9Vpz5AntaW_gLT2Pf3P7b-SG0H4A/photo/AF1QipOEYtWDvB1-SqW9vYtkXJcaMUAyiuMFFpuIaCRU?key=WUVkbHpQbGliMEdlNU4teUNaOV9OeldtYk1zZ29R"
                     )
