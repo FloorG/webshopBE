@@ -25,7 +25,7 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
-@CrossOrigin(origins = {"http://localhost:4200", "https://www.gattyspaintings.nl/"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://www.gattyspaintings.nl"})
 @EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 public class SecurityConfig {
     private final JWTFilter filter;
@@ -65,10 +65,10 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:4200")); // ✅ Allow frontend origin
+        configuration.setAllowedOrigins(List.of("http://localhost:4200", "https://www.gattyspaintings.nl"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(true); // ✅ Required for cookies/authentication
+        configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
