@@ -31,7 +31,8 @@ public class OrderDetails {
     private String email;
     private String address;
     private String city;
-    private String state;
+    private String zipCode;
+    private String houseNumber;
 
     @ManyToOne
     @JsonIgnore
@@ -43,14 +44,14 @@ public class OrderDetails {
     @OneToMany(mappedBy = "orderDetails")
     private List<OrderItem> items;
 
-    public OrderDetails(String firstName, String lastName, User user, String email, String address, String city, String state, BigDecimal totalPrice) {
+    public OrderDetails(String firstName, String lastName, String email, String address, String city, String zipCode, String houseNumber, BigDecimal totalPrice) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.user = user;
         this.email = email;
         this.address = address;
         this.city = city;
-        this.state = state;
+        this.zipCode = zipCode;
+        this.houseNumber = houseNumber;
         this.totalPrice = totalPrice;
     }
 }

@@ -33,7 +33,10 @@ public class CheckOutRequest {
     private String city;
 
     @NotBlank
-    private String state;
+    private String zipCode;
+
+    @NotBlank
+    private String houseNumber;
 
     @Valid
     private List<Cart> items;

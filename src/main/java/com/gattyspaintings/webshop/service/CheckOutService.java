@@ -26,15 +26,15 @@ public class CheckOutService {
         this.orderItemsDAO = orderItemsDAO;
     }
 
-    public String createOrder(CheckOutRequest checkOutData, User user) {
+    public String createOrder(CheckOutRequest checkOutData) {
         OrderDetails orderToCreate = new OrderDetails(
                 checkOutData.getFirstName(),
                 checkOutData.getLastName(),
-                user,
                 checkOutData.getEmail(),
                 checkOutData.getAddress(),
                 checkOutData.getCity(),
-                checkOutData.getState(),
+                checkOutData.getZipCode(),
+                checkOutData.getHouseNumber(),
                 calculateTotal(checkOutData.getItems())
 
         );

@@ -10,7 +10,6 @@ import com.gattyspaintings.webshop.service.CheckOutService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +30,6 @@ public class CheckOutController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<OrderDetails> checkOut(@AuthenticationPrincipal String email, @RequestBody @Valid CheckOutRequest checkOutData) {
         User user = userDAO.findByEmail(email).orElseThrow(ResourceNotFoundException::new);
         String createdOrderId = checkOutService.createOrder(checkOutData, user);
