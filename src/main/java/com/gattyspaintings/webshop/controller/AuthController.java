@@ -90,7 +90,7 @@ public class AuthController {
         return result.isValid();
     }
 
-    @GetMapping("/mijnAccount")
+    @GetMapping("/myAccount")
     @PreAuthorize("hasRole('USER')")
     public User getMe(@AuthenticationPrincipal String email) {
         return userDAO.findByEmail(email).orElseThrow(ResourceNotFoundException::new);
